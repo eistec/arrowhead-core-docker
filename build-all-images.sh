@@ -5,7 +5,7 @@ DIRS=service-registry
 
 # Build for x86
 for d in ${DIRS}; do
-    (cd "${d}" && docker build -t "${IMAGE_TAG_PREFIX}${d}" . && docker push "${IMAGE_TAG_PREFIX}${d}")
+    (cd "${d}" && docker build -t "${IMAGE_TAG_PREFIX}${d}:latest" . && docker push "${IMAGE_TAG_PREFIX}${d}:latest")
 done
 
 # Build for ARM (requires binfmt-misc support and a qemu-arm-wrapper)
