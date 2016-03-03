@@ -18,3 +18,8 @@ This repository contains Dockerfiles and scripts to run the Arrowhead core servi
 
  - Docker (Ubuntu: `sudo apt-get install docker.io`), tested on Docker v1.10
 
+## Settings
+
+See the file `container-settings.sh` for some Docker settings.
+
+Examine the included configuration files for fine-grained tuning.
