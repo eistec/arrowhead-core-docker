@@ -1,0 +1,42 @@
+$TTL 3600 ; One hour default TTL
+
+; Replace wab.example.com. below with your machine's hostname
+@ IN SOA localhost. root.localhost. (
+                                1          ; serial
+                                10800      ; refresh (3 hours)
+                                3600       ; retry   (1 hour)
+                                604800     ; expire  (1 week)
+                                60         ; minimum (1 minute)
+                                )
+
+; Specify your server as the nameserver for your zone,
+; substituting your machine's hostname.
+@ IN NS localhost.
+
+; Specify the server which handles DNS updates for your zone,
+; typically port 53 on the same server as above.
+; If you're going to be running dnsextd (see below) then the port number is typically 5352
+_dns-update._udp IN SRV 0 0 53 localhost.
+
+; Add PTR records telling clients that they can browse and register here
+;b._dns-sd._udp  IN PTR @   ;  "b" = browse domain
+;lb._dns-sd._udp IN PTR @   ; "lb" = legacy browse domain (include domain in empty-string browses)
+;r._dns-sd._udp  IN PTR @   ;  "r" = registration domain
+
+; Add for applications to discover your domain as a potential place to browse
+b._dns-sd._udp   IN PTR @
+
+; Add if you want your domain to be chosen as the default
+; browse domain in the Bonjour Preference Pane
+db._dns-sd._udp  IN PTR @
+
+; Add for this domain to show up in the list of potential registration domains
+r._dns-sd._udp   IN PTR @
+
+; Add if you want your domain to be chosen as the default
+; registration domain in the Bonjour Preference Pane
+dr._dns-sd._udp  IN PTR @
+
+; Add the following line so that applications that do empty-string
+; domain browses will browse your zone in addition to "local."
+lb._dns-sd._udp  IN PTR @

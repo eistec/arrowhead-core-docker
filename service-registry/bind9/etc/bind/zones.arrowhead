@@ -1,0 +1,13 @@
+// entry for our new zone
+zone "arrowhead.localtest." {
+  type master;
+  file "db.arrowhead.localtest";
+  allow-update { key arrowhead.localtest.; };
+  //allow-update { any; };
+};
+
+// key for updating our zone
+key arrowhead.localtest. {
+  algorithm hmac-md5;
+  secret "QZw8Iy4efwplPfOABtAiqV0AAH0jJPJaeP3SdNisoWM=";
+};
