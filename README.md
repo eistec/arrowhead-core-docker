@@ -1,6 +1,10 @@
 # Arrowhead Core services
 This repository contains Dockerfiles and scripts to run the Arrowhead core services inside Docker containers.
 
+## License
+
+Released under the Arrowhead Framework Licensing terms, which is a dual license Eclipse Public License and Apache License v2.0. For more details, see the LICENSE file in this repository.
+
 ## Quick start guide
 
     git clone https://github.com/eistec/arrowhead-core-docker.git
