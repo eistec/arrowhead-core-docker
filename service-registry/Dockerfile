@@ -1,7 +1,7 @@
 #
 # Arrowhead service registry Dockerfile
 #
-FROM quantumobject/docker-alpine
+FROM eistec/docker-alpine:latest
 
 MAINTAINER Joakim Nohlgård <joakim.nohlgard@eistec.se>
 
