@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source "`dirname $0`/container-settings.sh"
+. "`dirname $0`/container-settings.sh"
 
 # This will start an ephemeral container for the Arrowhead service registry.
 # The data will be linked from the data container

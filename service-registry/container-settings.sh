@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MACHINE_TYPE=`uname -m`
-if [ x${MACHINE_TYPE} == 'xarmv7l' ]; then
+if [ x${MACHINE_TYPE} = xarmv7l ]; then
   # for ARM machines, use a different tag
   export SERVICEREGISTRY_CONTAINER_TAG=eistec/arrowhead-service-registry:armhf
 else
