@@ -1,0 +1,11 @@
+[Unit]
+Description=Arrowhead Service Registry
+Documentation=
+After=network-online.target
+
+[Service]
+ExecStart=/opt/arrowhead-core-docker/service-registry/run-server.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
